@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+
+            <div class="mb-3">
+                <label>Item Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="name">
+                <!-- <button type="button" class="btn btn-primary" (click)="onAdd()">Submit</button> -->
+                <!-- <p>{{name}}</p> -->
+                <!-- <p *ngIf="displaydata">{{ name }}</p> -->
+            </div>
+
+            <div class="mb-3">
+                <label>imageUrl</label>
+                <input type="text" class="form-control" [(ngModel)]="img">
+                <!-- <button type="button" class="btn btn-primary" (click)="onAdd()">Submit</button> -->
+                <!-- <p>{{name}}</p> -->
+                <!-- <p *ngIf="displaydata">{{ name }}</p> -->
+            </div>
+
+
+            <select class="form-select" [(ngModel)]="category">
+                <option *ngFor="let cate of categoryArr" [value]="cate.name">
+                    {{cate.name}}
+                </option>
+            </select>
+            <p>{{category}}</p>
+            <p>{{selectedItem}}</p>
+
+
+
+            <div class="mb-3">
+                <!-- <img [src]="item.imagePath" alt="{{item.name}}" class="img-responsive" style=" -->
+                <!-- width: 319px;  -->
+                <!-- "> -->
+
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input type="number" class="ms-4" [(ngModel)]="price" name="price">
+
+            </div>
+
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Special</label>
+            </div>
+
+
+            <button type="button" class="btn btn-primary" (click)="onAdd()">Add</button>
+
+
+        </div>
+
+        <div class="col-6">
+            <app-display [displayData]="userInfo"></app-display>
+            <!-- <app-display *ngFor="let name of items"></app-display> -->
+        </div>
+    </div>
+</div>
+
+
+<!-- (ngModelChange)="onselected($event)" -->
+
+<!-- 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg' -->

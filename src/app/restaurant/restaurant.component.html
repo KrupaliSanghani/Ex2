@@ -1,0 +1,22 @@
+<!-- <div class="contain">
+    <div class="row">
+        <div class="col-md-6">
+            <app-entry></app-entry>
+            <app-display></app-display>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<div class="row">
+    <!-- <div class="col-md-5"> -->
+    <app-entry></app-entry>
+    <!-- </div> -->
+    <!-- <div class="col-md-7"> -->
+    <!-- <router-outlet></router-outlet> -->
+    <app-display (itemSelected)="childEvent()"></app-display>
+    <!-- </div> -->
+</div>
