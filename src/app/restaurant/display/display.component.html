@@ -1,29 +1,38 @@
-<div class="container">
-    <div class="row">
-        <!-- <div class="col-6">
+<!-- <div class="container"> -->
+<!-- <div class="row"> -->
+<!-- <div class="col-6">
 
         </div> -->
-        <div class="card" style="width: 18rem;" *ngFor="let data of displayData">
-            <img class="card-img-top" src="{{data.img}}" alt="Card image cap">
-            <div class="card-body">
-                <h5>{{data.name}}</h5>
-                <p>{{data.category}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+<div class="card" style="width: 25rem;" *ngFor="let data of displayData">
+    <div class="row">
+        <div class="col-6">
+            <img class="card-img-top" src="{{ data.Img }}">
         </div>
+        <div class="col-6">
+            <h5>{{data.Name}}</h5>
+            <p>category : {{data.Category}}</p>
+            <p>Price: {{data.Price}}</p>
+        </div>
+    </div>
+
+    <!-- <div class="card-body"> -->
+
+    <a style="width: 200px;" href="#" class="btn btn-primary">Add to menu</a>
+    <!-- </div> -->
+</div>
 
 
-        <!-- <div class="col-12" *ngFor="let data of displayData">
+<!-- <div class="col-12" *ngFor="let data of displayData">
 
             <p>{{ name }}</p> -->
-        <!-- <p>{{ data.Name }} -->
-        <!-- </p> -->
-        <!-- <img src="{{data.img}}" alt=""> -->
-        <!-- <button class="btn">Add To Menu</button> -->
-        <!-- </div> -->
+<!-- <p>{{ data.Name }} -->
+<!-- </p> -->
+<!-- <img src="{{data.img}}" alt=""> -->
+<!-- <button class="btn">Add To Menu</button> -->
+<!-- </div> -->
 
-        <!-- <div class="row"> -->
-        <!-- 
+<!-- <div class="row"> -->
+<!-- 
         </div> -->
 
-    </div>
+<!-- </div> -->

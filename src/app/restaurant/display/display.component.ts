@@ -8,12 +8,12 @@ import { Item } from '../restaurant.model';
 })
 export class DisplayComponent implements OnInit {
 
-  items: Item;
+  // items: Item;
   @Input() displayData: any[] =[];
   
 
   constructor() {
-    console.log(this.displayData);
+    // console.log(this.displayData);
    }
 
   ngOnInit(): void {

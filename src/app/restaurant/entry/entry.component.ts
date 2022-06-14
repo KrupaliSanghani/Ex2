@@ -14,20 +14,20 @@ items: Item;
  @Output() itemSelected = new EventEmitter();
 
 name='';
-itemName: any[]=[];
+dataArr: any[]=[];
 
 img;
 
-id=Number;
+// id=Number;
 category;
 selectedItem: string;
 
-priceArr: any[]= [];
+// priceArr: any[]= [];
 price: Number;
 
 
 
-userInfo = [];
+// userInfo = [];
  categoryArr = [];
 
 
@@ -44,7 +44,7 @@ onAdd(){
 
   //  console.log(this.category);
 
-  this.userInfo.push({ Name :  this.name  , Category :  this.category });
+  this.dataArr.push({ Name :  this.name , Img: this.img , Category :  this.category , Price: this.price});
 
   this.itemSelected.emit();
 }
