@@ -26,7 +26,7 @@ export class EntryComponent implements OnInit {
   // validimg = 'please enter ImageUrl';
   // imgError = false;
   // --------category--------
-  category = 'gujarati';
+  category = 'gujrati';
 
   // --------price--------
   price: Number;
@@ -37,6 +37,7 @@ export class EntryComponent implements OnInit {
 
   // --------item-array-------
   dataArr: any[] = [];
+  modifedtext: string;
 
   // --------------add-item-array-----------
   onAdd() {
@@ -78,6 +79,7 @@ export class EntryComponent implements OnInit {
 
   ngOnInit() {
 
+    console.log(this.category);
     // --------category-array-------
     this.categoryArr = [
       { id: 1, name: "south indian" },
@@ -87,7 +89,12 @@ export class EntryComponent implements OnInit {
 
     ]
   }
+  // onCategorySelected(val:any){
+  //   this.customFunction(val);
+  // }
 
-
+  // customFunction(val:any){
+  //   this.modifedtext = "The value" +val + "was selected from dropdown";
+  // }
 
 }

@@ -10,14 +10,43 @@ import { ItemsService } from '../items.service';
 export class TodaysMenuComponent implements OnInit {
 
   // ----------menulist-array-------
-  menuArr = [];
+  name;
+  menuArr: any = [];
 
-  constructor(private itemservice: ItemsService) { }
+  constructor(private itemservice: ItemsService) {
+    this.itemservice.displayItem.subscribe((data) => {
+      console.log(data);
+      // this.menuArr.slice();
+      this.menuArr.push(data);
+      console.log(this.menuArr);
+      // this.menuArr.push(data);
+    })
+  }
 
   ngOnInit() {
 
-    this.menuArr = this.itemservice.getMenuList();
-    console.log(this.menuArr);
+    // this.menuArr = this.itemservice.getMenuList();
+    // console.log(this.itemservice.displayItem);
+
+    // this.itemservice.getMenuList().subscribe(data => {
+    //   console.log(data);
+    //   this.menuArr.push(data);
+    //   // this.menuArr = data;
+    //   console.log(this.menuArr);
+    // })
+
+
+
+    // this.itemservice.displayItem.subscribe((data) => {
+    //   console.log(data);
+    //   // this.menuArr.slice();
+    //   this.menuArr.push(data);
+    //   console.log(this.menuArr);
+    //   // this.menuArr.push(data);
+    // })
+
+    // this.name = this.menuArr;
+
   }
 
 

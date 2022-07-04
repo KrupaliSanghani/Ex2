@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Injectable } from "@angular/core";
 
 @Injectable({
@@ -7,30 +7,38 @@ import { Injectable } from "@angular/core";
 
 
 export class ItemsService {
+    public displayItem = new Subject<any>();
     menuArr = [];
     displayMenu = [];
 
     private messageSource = new BehaviorSubject('default message');
     public currentMessageSubscriber = this.messageSource.asObservable();
+    // subject: any;
 
     constructor() { }
 
     // ------------from-display-component----------
-    getMenuList() {
-        console.log(this.menuArr);
-        return this.menuArr;
+    // getMenuList(): Observable<any> {
+    // return this.subject.asObservable();
+    // return this.menuArr;
+    // }
+
+
+    sendData(data: any) {
+        this.displayItem.next(data);
     }
 
-    storeMenuList(passData) {
-        this.menuArr.push(passData);
-        console.log(this.menuArr);
-    }
+    // storeMenuList(passData) {
+    //     this.menuArr.push(passData);
+    //     this.displayItem.next(passData);
+    //     console.log(this.menuArr);
+    // }
 
     notify(message: any) {
         this.messageSource.next(message)
     }
 
-    // ------------from-display-component----------
+    // ------------from-entry-component----------
 
     getMenu() {
         console.log(this.displayMenu);
@@ -41,7 +49,4 @@ export class ItemsService {
         this.displayMenu.push(addData);
         console.log(this.displayMenu);
     }
-
-
-
 }

@@ -1,14 +1,20 @@
 <h4>Menu List</h4>
 
 <!-- ------------south indian------------- -->
+{{menuArr[0]?.Special}}
+<p *ngFor="let n of menuArr">{{n.Name}}</p>
+<!-- <p>{{name}}</p> -->
+
+
+
 <h6>south indian</h6>
 <ul *ngFor="let passData of menuArr">
-    <div *ngIf="passData.Special" appHighlight>
-        <li *ngIf="passData.Category == 'south indian'">
+    <div *ngIf="passData?.Special" appHighlight>
+        <li *ngIf="passData?.Category == 'south indian'">
 
-            <p>Name: {{passData.Name}}</p><span>{{passData.Special === true ? 'special' : ''}}</span>
-            <P> Price: {{passData.Price}}</P>
-            <p> {{passData.Category}}</p>
+            <p>Name: {{passData?.Name}}</p><span>{{passData?.Special === true ? 'special' : ''}}</span>
+            <P> Price: {{passData?.Price}}</P>
+            <p> {{passData?.Category}}</p>
             <button (click)="onRemove(passData)">Remove from Menu</button>
         </li>
     </div>
@@ -16,9 +22,9 @@
     <div *ngIf=" !passData.Special">
         <li *ngIf="passData.Category == 'south indian'">
 
-            <p>Name: {{passData.Name}}</p><span>{{passData.Special === true ? 'special' : ''}}</span>
-            <P> Price: {{passData.Price}}</P>
-            <p> {{passData.Category}}</p>
+            <p>Name: {{passData?.Name}}</p><span>{{passData?.Special === true ? 'special' : ''}}</span>
+            <P> Price: {{passData?.Price}}</P>
+            <p> {{passData?.Category}}</p>
             <button (click)="onRemove(passData)">Remove from Menu</button>
 
         </li>

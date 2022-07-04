@@ -1,5 +1,5 @@
 <!-- -----------from-entry-component------- -->
-<!-- <div *ngIf="inputArr"> -->
+<!-- <div *ngIf="inputArr1"> -->
 <div class="card" style="width: 25rem;" *ngFor="let data of displayData">
     <div class="row">
         <div class="col-6">
@@ -21,23 +21,23 @@
 <!-- </div> -->
 
 <!-- -----------from-service-------- -->
-<!-- <div *ngIf="inputArr"> -->
+<!-- <div *ngIf="inputArr">
 <div class="card" style="width: 25rem;" *ngFor="let passData of menuArr">
     <div class="row">
         <div class="col-6">
-            <!-- ------image---- -->
+            
             <img class="card-img-top" src="{{ passData.Img }}">
         </div>
         <div class="col-6">
-            <!-- ------item-name--- -->
+        
             <h5>{{passData.Name}}</h5><span>{{passData.Special === true ? 'special' : ''}}</span>
-            <!-- ------category---- -->
+            
             <p>category : {{passData.Category}}</p>
-            <!-- ------price---- -->
+            
             <p>Price: {{passData.Price}}</p>
         </div>
     </div>
-    <button class="btn btn-primary" (click)="onAddMenu()">Add
+    <button class="btn btn-primary" (click)="onAddMenuList(passData)">Add
         to menu</button>
 </div>
-<!-- </div> -->
+</div> -->
