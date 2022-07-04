@@ -1,38 +1,43 @@
-<!-- <div class="container"> -->
-<!-- <div class="row"> -->
-<!-- <div class="col-6">
-
-        </div> -->
+<!-- -----------from-entry-component------- -->
+<!-- <div *ngIf="inputArr"> -->
 <div class="card" style="width: 25rem;" *ngFor="let data of displayData">
     <div class="row">
         <div class="col-6">
+            <!-- ------image---- -->
             <img class="card-img-top" src="{{ data.Img }}">
         </div>
         <div class="col-6">
-            <h5>{{data.Name}}</h5>
+            <!-- ------item-name--- -->
+            <h5>{{data.Name}}</h5><span>{{data.Special === true ? 'special' : ''}}</span>
+            <!-- ------category---- -->
             <p>category : {{data.Category}}</p>
+            <!-- ------price---- -->
             <p>Price: {{data.Price}}</p>
         </div>
     </div>
-
-    <!-- <div class="card-body"> -->
-
-    <a style="width: 200px;" href="#" class="btn btn-primary">Add to menu</a>
-    <!-- </div> -->
+    <button style="width: 200px;" class="btn btn-primary" (click)="onAddMenu(data)">Add
+        to menu</button>
 </div>
-
-
-<!-- <div class="col-12" *ngFor="let data of displayData">
-
-            <p>{{ name }}</p> -->
-<!-- <p>{{ data.Name }} -->
-<!-- </p> -->
-<!-- <img src="{{data.img}}" alt=""> -->
-<!-- <button class="btn">Add To Menu</button> -->
 <!-- </div> -->
 
-<!-- <div class="row"> -->
-<!-- 
-        </div> -->
-
+<!-- -----------from-service-------- -->
+<!-- <div *ngIf="inputArr"> -->
+<div class="card" style="width: 25rem;" *ngFor="let passData of menuArr">
+    <div class="row">
+        <div class="col-6">
+            <!-- ------image---- -->
+            <img class="card-img-top" src="{{ passData.Img }}">
+        </div>
+        <div class="col-6">
+            <!-- ------item-name--- -->
+            <h5>{{passData.Name}}</h5><span>{{passData.Special === true ? 'special' : ''}}</span>
+            <!-- ------category---- -->
+            <p>category : {{passData.Category}}</p>
+            <!-- ------price---- -->
+            <p>Price: {{passData.Price}}</p>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="onAddMenu()">Add
+        to menu</button>
+</div>
 <!-- </div> -->

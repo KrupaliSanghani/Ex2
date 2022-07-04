@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Item } from '../restaurant.model';
+import { ItemsService } from 'src/app/items.service';
+
+
 
 @Component({
   selector: 'app-display',
@@ -8,20 +10,29 @@ import { Item } from '../restaurant.model';
 })
 export class DisplayComponent implements OnInit {
 
-  // items: Item;
-  @Input() displayData: any[] =[];
-  
+  @Input() displayData;
+  inputArr = false;
+  menuArr = [];
 
-  constructor() {
-    // console.log(this.displayData);
-   }
-
-  ngOnInit(): void {
-    
-
+  constructor(private itemsService: ItemsService) {
   }
 
-  onItemAdded(){
-    
+  ngOnInit() {
+
+    // --------for-special-item-------
+    this.itemsService.currentMessageSubscriber.subscribe((data: any) => {
+      console.log(data)
+    })
+
+    // this.inputArr = true;
+    this.menuArr = this.itemsService.getMenu();
+    console.log(this.menuArr);
+    console.log(this.displayData)
   }
+
+  onAddMenu(data) {
+    console.log(this.displayData);
+    this.itemsService.storeMenuList(data);
+  }
+
 }
