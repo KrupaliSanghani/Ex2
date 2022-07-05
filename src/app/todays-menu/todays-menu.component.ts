@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { ItemsService } from '../items.service';
 
 @Component({
@@ -9,43 +9,71 @@ import { ItemsService } from '../items.service';
 })
 export class TodaysMenuComponent implements OnInit {
 
+  private subscription: Subscription;
+  // @Input('appHighlight') options: any;
+
   // ----------menulist-array-------
-  name;
-  menuArr: any = [];
+  Arr = [];
+  menuArr = [];
 
   constructor(private itemservice: ItemsService) {
-    this.itemservice.displayItem.subscribe((data) => {
-      console.log(data);
-      // this.menuArr.slice();
-      this.menuArr.push(data);
-      console.log(this.menuArr);
-      // this.menuArr.push(data);
-    })
+
+    // this.itemservice.displayItem.subscribe(data => {
+    //   console.log(data);
+    //   // this.menuArr = data;
+    //   this.menuArr.push(data);
+    //   // this.Arr.push(data);
+    //   console.log(this.menuArr);
+    // });
+
+
+    // this.Arr.push(this.menuArr);
+    // this.itemservice.getMenuList().subscribe((data) => {
+    //   // this.menuArr.push(data);
+    //   this.menuArr = data;
+    //   console.log(this.menuArr);
+    // })
+
+
+    console.log(this.Arr);
+    console.log(this.menuArr);
+
   }
 
   ngOnInit() {
 
-    // this.menuArr = this.itemservice.getMenuList();
-    // console.log(this.itemservice.displayItem);
-
-    // this.itemservice.getMenuList().subscribe(data => {
-    //   console.log(data);
-    //   this.menuArr.push(data);
-    //   // this.menuArr = data;
-    //   console.log(this.menuArr);
-    // })
 
 
-
-    // this.itemservice.displayItem.subscribe((data) => {
-    //   console.log(data);
-    //   // this.menuArr.slice();
-    //   this.menuArr.push(data);
-    //   console.log(this.menuArr);
+    // this.itemservice.getMenuList().subscribe((data) => {
     //   // this.menuArr.push(data);
+    //   this.menuArr = data;
+    //   console.log(this.menuArr);
     // })
 
-    // this.name = this.menuArr;
+
+
+    this.itemservice.getMenuList().subscribe((data) => {
+      // this.menuArr.push(data);
+      this.menuArr = data;
+      console.log(this.menuArr);
+    })
+
+
+
+
+    // -----------get data from service---------
+
+    // this.itemservice.displayItem.subscribe(data => {
+    //   console.log(data);
+    //   this.menuArr = data;
+    //   // this.menuArr.push(data);
+    //   // this.Arr.push(data);
+    //   console.log(this.menuArr);
+    // });
+
+    this.Arr = this.menuArr;
+    console.log(this.Arr);
+    console.log(this.menuArr);
 
   }
 

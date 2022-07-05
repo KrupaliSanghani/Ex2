@@ -13,25 +13,26 @@ import { ItemsService } from 'src/app/items.service';
 export class EntryComponent implements OnInit {
 
 
-
   // --------for-special--------
-  special = true;
+  special: boolean = true;
 
   // --------item-name-------
-  name = '';
-  validname = 'please Enter Item Name';
-  nameError = false;
+  name: string = '';
+  validname: string = 'please Enter Item Name';
+  nameError: boolean = false;
+
   // --------image--------
-  img;
-  // validimg = 'please enter ImageUrl';
-  // imgError = false;
+  img: string;
+
+
   // --------category--------
-  category = 'gujrati';
+  category: string = 'gujrati';
 
   // --------price--------
   price: Number;
-  validprice = 'Enter valid price';
-  priceError = false
+  validprice: string = 'Enter valid price';
+  priceError: boolean = false;
+
   // --------category-array-------
   categoryArr = [];
 
@@ -47,39 +48,22 @@ export class EntryComponent implements OnInit {
     // var data = this.dataArr.push({ Name: this.name, Img: this.img, Category: this.category, Price: this.price, Special: this.special });
     this._itemsService.AddToService({ Name: this.name, Img: this.img, Category: this.category, Price: this.price, Special: this.special });
 
+    // -------------check validation----------
     if (this.name == '') {
       this.nameError = true
     }
 
-
     if (this.price < 1) {
       this.priceError = true
     }
-
-    else {
-
-    }
-    // else if (this.img == '') {
-    //   this.imgError = !this.imgError
-    // }
-    // else if (this.img == '') {
-    //   this.categoryError = !this.categoryError
-    // }
   }
-
 
   constructor(private _itemsService: ItemsService) { }
 
-  // --------for-special--------
-  notifyOtherComponent() {
-    this._itemsService.notify({ msg: 'special' })
-  }
-
-
-
   ngOnInit() {
 
-    console.log(this.category);
+    // console.log(this.category);
+
     // --------category-array-------
     this.categoryArr = [
       { id: 1, name: "south indian" },
@@ -89,12 +73,6 @@ export class EntryComponent implements OnInit {
 
     ]
   }
-  // onCategorySelected(val:any){
-  //   this.customFunction(val);
-  // }
 
-  // customFunction(val:any){
-  //   this.modifedtext = "The value" +val + "was selected from dropdown";
-  // }
 
 }
