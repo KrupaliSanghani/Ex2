@@ -10,71 +10,33 @@ import { ItemsService } from '../items.service';
 export class TodaysMenuComponent implements OnInit {
 
   private subscription: Subscription;
-  // @Input('appHighlight') options: any;
 
   // ----------menulist-array-------
-  Arr = [];
   menuArr = [];
 
   constructor(private itemservice: ItemsService) {
 
-    // this.itemservice.displayItem.subscribe(data => {
-    //   console.log(data);
-    //   // this.menuArr = data;
-    //   this.menuArr.push(data);
-    //   // this.Arr.push(data);
-    //   console.log(this.menuArr);
-    // });
-
-
-    // this.Arr.push(this.menuArr);
-    // this.itemservice.getMenuList().subscribe((data) => {
-    //   // this.menuArr.push(data);
-    //   this.menuArr = data;
-    //   console.log(this.menuArr);
-    // })
-
-
-    console.log(this.Arr);
     console.log(this.menuArr);
 
   }
 
   ngOnInit() {
 
-
-
     // this.itemservice.getMenuList().subscribe((data) => {
     //   // this.menuArr.push(data);
     //   this.menuArr = data;
     //   console.log(this.menuArr);
     // })
 
-
-
-    this.itemservice.getMenuList().subscribe((data) => {
-      // this.menuArr.push(data);
-      this.menuArr = data;
-      console.log(this.menuArr);
-    })
-
-
-
-
     // -----------get data from service---------
 
-    // this.itemservice.displayItem.subscribe(data => {
-    //   console.log(data);
-    //   this.menuArr = data;
-    //   // this.menuArr.push(data);
-    //   // this.Arr.push(data);
-    //   console.log(this.menuArr);
-    // });
-
-    this.Arr = this.menuArr;
-    console.log(this.Arr);
-    console.log(this.menuArr);
-
+    this.itemservice.displayItem.subscribe(data => {
+      console.log(data);
+      this.menuArr = data;
+      // this.menuArr.push(data);
+      // this.Arr.push(data);
+      console.log(this.menuArr);
+    });
   }
 
 

@@ -37,16 +37,16 @@ export class EntryComponent implements OnInit {
   categoryArr = [];
 
   // --------item-array-------
-  dataArr: any[] = [];
+
   modifedtext: string;
 
   // --------------add-item-array-----------
   onAdd() {
-    this.dataArr.push({ Name: this.name, Img: this.img, Category: this.category, Price: this.price, Special: this.special });
-    console.log(this.dataArr);
+
 
     // var data = this.dataArr.push({ Name: this.name, Img: this.img, Category: this.category, Price: this.price, Special: this.special });
     this._itemsService.AddToService({ Name: this.name, Img: this.img, Category: this.category, Price: this.price, Special: this.special });
+
 
     // -------------check validation----------
     if (this.name == '') {

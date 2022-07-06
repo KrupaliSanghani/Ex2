@@ -7,7 +7,6 @@ import { BrowserModule } from '@angular/platform-browser';
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: RestaurantComponent },
-    // {path: 'add', component: TodaysMenuComponent},
     { path: 'todays-menu', component: TodaysMenuComponent },
 ];
 

@@ -11,19 +11,26 @@ import { ItemsService } from 'src/app/items.service';
 export class DisplayComponent implements OnInit {
 
   displayData = [];
-  Arr = [];
 
 
   constructor(private itemsService: ItemsService) {
-    // console.log(this.displayData);
+
   }
 
   ngOnInit() {
 
     // ---------get data from service----
-    if (this.displayData.length == 0) {
-      this.displayData = this.itemsService.getMenu();
-    }
+
+    this.itemsService.ItemSubject.subscribe(data => {
+      // console.log(data);
+      this.displayData = data;
+      console.log(this.displayData);
+    });
+    // console.log(this.displayData);
+
+    this.displayData = this.itemsService.getMenu();
+    console.log(this.displayData.length);
+    //   console.log(this.displayData);
 
   }
 
